@@ -4,6 +4,7 @@ import axios from 'axios';
 import Home from './components/Home.jsx'
 import F1 from './components/F1.jsx'
 import F2 from './components/F2.jsx'
+import F3 from './components/F3.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,31 @@ class App extends React.Component {
     }
 
     this.progressCheckout = this.progressCheckout.bind(this);
+  }
+
+    // fetch() {
+  //   axios.get('http://localhost:3000/')
+  //   .then((response) => {
+  //     console.log('axios ', response);
+
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+  // }
+
+  // componentWillMount() {
+  //   this.fetch();
+  // }
+
+  post() {
+    axios.post('http://localhost:3000/')
+    .then((response) => {
+      console.log('post ', response)
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   progressCheckout() {
@@ -60,6 +86,8 @@ class App extends React.Component {
     }
   }
 }
+
+// export default App;
 
 ReactDOM.render(<App />, document.getElementById('app'));
 
